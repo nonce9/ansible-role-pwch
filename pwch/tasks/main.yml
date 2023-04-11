@@ -136,17 +136,21 @@
     owner: root
     group: root
     mode: 0644
-  notify: Reload pwch policy
+  register: apparmor_policy
   when: pwch_apparmor_enabled
   loop:
     - {src: apparmor_profile_pwch, dest: pwch}
     - {src: apparmor_profile_doveadm_wrapper, dest: doveadm_wrapper}
 
-- name: Run all notified handlers now
-  ansible.builtin.meta: flush_handlers
+- name: Reload apparmor policies  # noqa no-handler
+  ansible.builtin.command: >
+    apparmor_parser -r /etc/apparmor.d/usr.local.bin.pwch
+    /etc/apparmor.d/usr.local.bin.doveadm_wrapper
+  when: apparmor_policy.changed
 
 - name: Enable and start service
   ansible.builtin.systemd:
     name: pwch
     enabled: true
     state: started
+    daemon_reload: true
