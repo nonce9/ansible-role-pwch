@@ -3,12 +3,6 @@
   ansible.builtin.systemd:
     daemon_reload: true
 
-- name: Reload pwch policy
-  ansible.builtin.command: >
-    apparmor_parser -r /etc/apparmor.d/usr.local.bin.pwch
-    /etc/apparmor.d/usr.local.bin.doveadm_wrapper
-  when: pwch_apparmor_enabled
-
 - name: Restart pwch
   ansible.builtin.systemd:
     name: pwch
