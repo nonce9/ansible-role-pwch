@@ -13,7 +13,7 @@ Role Variables
 
 Available variables are listed below.
 
-`pwch_version:`           pwch version to install; e.g. `1.1.1`
+`pwch_version:` &emsp; pwch version to install; e.g. `1.1.1`
 
 `pwch_base_url:`          pwch download URL; should not be changed
 
