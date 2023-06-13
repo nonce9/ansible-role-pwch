@@ -1,12 +1,12 @@
 ---
+dependencies: []
+
 galaxy_info:
-  author: Benedikt Zumtobel
+  role_name: pwch
+  author: nonce9
   description: Ansible role to deploy pwch
-
   license: "AGPL-3.0"
-
   min_ansible_version: "2.12"
-
   platforms:
     - name: Debian
       versions:
@@ -14,7 +14,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-
   galaxy_tags:
     - pwch
     - email
