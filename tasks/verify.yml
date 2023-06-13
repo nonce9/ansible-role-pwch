@@ -7,7 +7,7 @@
     force: true
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
-    mode: 0644
+    mode: "0644"
   loop:
     - sha256
     - sha256.asc
@@ -18,7 +18,7 @@
     dest: "{{ ansible_env.HOME }}/public.asc"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
-    mode: 0640
+    mode: "0640"
 
 - name: Import public key
   ansible.builtin.command: gpg --import {{ ansible_env.HOME }}/public.asc
