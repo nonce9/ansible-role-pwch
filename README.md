@@ -15,8 +15,8 @@ Available variables are listed below.
 
 Variables                 | Default
 --------------------------|---
-`pwch_version:`           | pwch version to install; e.g. `1.1.1`
-`pwch_base_url:`          | pwch download URL; should not be changed
+__pwch_version:__           | pwch version to install; e.g. `1.1.1`
+__pwch_base_url:__          | pwch download URL; should not be changed
 `pwch_domain:`            | your mailserver's fqdn; default: `example.org`
 `pwch_url_prefix:`        | URL prefix to append to all http server responses; default: `/selfservice`; can be emtpy as well
 `pwch_assets_path:`       | absolute path where html/css assets will be stored; default: `/usr/local/src/pwch`
